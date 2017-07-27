@@ -15,6 +15,8 @@ class Personaje {
 	
 	private Puntuacion carisma = new Puntuacion();
 	
+	private Raza raza;
+	
 	int calcularDiponibles() {
 		
 		return puntosDisponibles;
@@ -97,4 +99,18 @@ class Personaje {
 			puntosDisponibles = puntosDisponibles - sabiduria.canjear(puntos);
 		}
 	}
+	
+	void definirRaza(Raza razaElegida) {
+		
+		if (puntosDisponibles == 0) {
+			
+			raza = razaElegida;
+		}
+	}
+	
+	Raza verRaza () {
+		
+		return raza;
+	}
+	
 }
