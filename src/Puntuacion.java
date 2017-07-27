@@ -55,4 +55,9 @@ class Puntuacion {
 
 		return modificador;
 	}
+	
+	int verValor() {
+		
+		return valor;
+	}
 }

@@ -35,6 +35,11 @@ class Personaje {
 		}
 	}
 	
+	int verFuerza() {
+		
+		return fuerza.verValor();
+	}
+	
 	int calcularDestreza() {
 		
 		return destreza.calcular();
