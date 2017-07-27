@@ -1,65 +1,100 @@
 
 class Personaje {
 	
-	int puntosDisponibles = 15;
-
-	int puntosDeFuerza = 10;
+	private int puntosDisponibles = 15;
+	
+	private Puntuacion fuerza = new Puntuacion();
+	
+	private Puntuacion destreza = new Puntuacion();
+	
+	private Puntuacion constitucion = new Puntuacion();
+	
+	private Puntuacion inteligencia = new Puntuacion();
+	
+	private Puntuacion sabiduria = new Puntuacion();
+	
+	private Puntuacion carisma = new Puntuacion();
+	
+	int calcularDiponibles() {
+		
+		return puntosDisponibles;
+	}
 	
 	int calcularFuerza() {
 		
-		int modificadorFuerza = (puntosDeFuerza/2) - 5;
-
-		return modificadorFuerza;
+		return fuerza.calcular();
 	}
 	
 	void canjearFuerza(int puntos) {
 		
-		int resultado = puntosDeFuerza + puntos;
+		if(puntosDisponibles >= puntos) {
+			
+			puntosDisponibles = puntosDisponibles - fuerza.canjear(puntos);
+		}
+	}
+	
+	int calcularDestreza() {
 		
-		if ((puntosDisponibles >= puntos) && (resultado >= 6) && (resultado <= 27)) {
+		return destreza.calcular();
+	}
+	
+	void canjearDestreza(int puntos) {
+		
+		if (puntosDisponibles >= puntos) {
 			
-			if (puntos == -4) {
-				
-				puntosDeFuerza = resultado + 1;
-				
-				puntosDisponibles = puntosDisponibles - puntos;
-				
-			} else if ((puntos >= -2) && (puntos <= 3)) {
-				
-				puntosDeFuerza = resultado;
-				
-				puntosDisponibles = puntosDisponibles - puntos;
+			puntosDisponibles = puntosDisponibles - destreza.canjear(puntos);
+		}
+	}
+	
+	int calcularConstitucion() {
+		
+		return constitucion.calcular();
+	}
+	
+	void canjearConstitucion(int puntos) {
+		
+		if (puntosDisponibles >= puntos) {
 			
-			} else if (puntos == 5) {
-				
-				puntosDeFuerza = resultado - 1; 
-				
-				puntosDisponibles = puntosDisponibles - puntos;
+			puntosDisponibles = puntosDisponibles - constitucion.canjear(puntos);
+		}
+	}
+	
+	int calcularInteligencia() {
+		
+		return inteligencia.calcular();
+	}
+	
+	void canjearInteligencia(int puntos) {
+		
+		if (puntosDisponibles >= puntos) {
 			
-			} else if (puntos == 7) {
-				
-				puntosDeFuerza = resultado - 2;
-				
-				puntosDisponibles = puntosDisponibles - puntos;
+			puntosDisponibles = puntosDisponibles - inteligencia.canjear(puntos);
+		}
+	}
+	
+	int calcularSabiduria() {
+		
+		return sabiduria.calcular();
+	}
+	
+	void canjearSabiduria(int puntos) {
+	
+		if (puntosDisponibles >= puntos) {
 			
-			} else if (puntos == 10) {
-				
-				puntosDeFuerza = resultado - 4;
-				
-				puntosDisponibles = puntosDisponibles - puntos;
+			puntosDisponibles = puntosDisponibles - sabiduria.canjear(puntos);
+		}
+	}
+	
+	int calcularCarisma() {
+		 
+		return carisma.calcular();
+	}
+	
+	void canjearCarisma(int puntos) {
+		
+		if (puntosDisponibles >= puntos) {
 			
-			} else if (puntos == 13) {
-				
-				puntosDeFuerza = resultado - 6;
-				
-				puntosDisponibles = puntosDisponibles - puntos;
-			
-			} else if (puntos == 17) {
-				
-				puntosDeFuerza = resultado - 9;
-				
-				puntosDisponibles = puntosDisponibles - puntos;
-			}
+			puntosDisponibles = puntosDisponibles - sabiduria.canjear(puntos);
 		}
 	}
 }
