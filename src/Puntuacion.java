@@ -1,7 +1,7 @@
 
 class Puntuacion {
 	
-	int valor = 10;
+	private int valor = 10;
 	
 	int canjear (int puntos) {
 		
