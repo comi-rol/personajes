@@ -17,7 +17,7 @@ class Personaje {
 	
 	private Raza raza;
 	
-	int calcularDiponibles() {
+	int calcularDisponibles() {
 		
 		return puntosDisponibles;
 	}
@@ -37,7 +37,14 @@ class Personaje {
 	
 	int verFuerza() {
 		
-		return fuerza.verValor();
+		int fuerzaTotal = fuerza.verValor();
+		
+		if (raza != null) {
+			
+			fuerzaTotal = fuerzaTotal + raza.verFuerza();
+		}
+		
+		return fuerzaTotal;
 	}
 	
 	int calcularDestreza() {
@@ -53,6 +60,18 @@ class Personaje {
 		}
 	}
 	
+	int verDestreza() {
+		
+		int destrezaTotal = destreza.verValor();
+		
+		if (raza != null) {
+			
+			destrezaTotal = destrezaTotal + raza.verDestreza();
+		}
+		
+		return destrezaTotal;
+	}
+	
 	int calcularConstitucion() {
 		
 		return constitucion.calcular();
@@ -64,6 +83,18 @@ class Personaje {
 			
 			puntosDisponibles = puntosDisponibles - constitucion.canjear(puntos);
 		}
+	}
+	
+	int verConstitucion() {
+		
+		int constitucionTotal = constitucion.verValor();
+		
+		if (raza != null) {
+			
+			constitucionTotal= constitucionTotal + raza.verConstitucion();
+		}
+		
+		return constitucionTotal;
 	}
 	
 	int calcularInteligencia() {
@@ -79,6 +110,18 @@ class Personaje {
 		}
 	}
 	
+	int verInteligencia() {
+		
+		int inteligenciaTotal = inteligencia.verValor();
+		
+		if (raza != null) {
+			
+			inteligenciaTotal = inteligenciaTotal + raza.verInteligencia();
+		}
+		
+		return inteligenciaTotal;
+	}
+	
 	int calcularSabiduria() {
 		
 		return sabiduria.calcular();
@@ -92,6 +135,18 @@ class Personaje {
 		}
 	}
 	
+	int verSabiduria() {
+		
+		int sabiduriaTotal = sabiduria.verValor();
+		
+		if (raza != null) {
+			
+			sabiduriaTotal = sabiduriaTotal + raza.verSabiduria();
+		}
+		
+		return sabiduriaTotal;
+	}
+	
 	int calcularCarisma() {
 		 
 		return carisma.calcular();
@@ -103,6 +158,18 @@ class Personaje {
 			
 			puntosDisponibles = puntosDisponibles - sabiduria.canjear(puntos);
 		}
+	}
+	
+	int verCarisma() {
+		
+		int carismaTotal = carisma.verValor();
+		
+		if (raza != null) {
+			
+			carismaTotal = carismaTotal + raza.verCarisma();
+		}
+		
+		return carismaTotal;
 	}
 	
 	void definirRaza(Raza razaElegida) {
