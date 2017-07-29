@@ -177,6 +177,8 @@ class Personaje {
 		if (puntosDisponibles == 0) {
 			
 			raza = razaElegida;
+			
+			puntosDisponibles = raza.verAdicional();
 		}
 	}
 	
