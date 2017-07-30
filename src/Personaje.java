@@ -26,7 +26,7 @@ class Personaje {
 	
 	int calcularFuerza() {
 		
-		return fuerza.calcular();
+		return (verFuerza()/2) - 5;
 	}
 	
 	void canjearFuerza(int puntos) {
@@ -61,7 +61,7 @@ class Personaje {
 	
 	int calcularDestreza() {
 		
-		return destreza.calcular();
+		return (verDestreza()/2) - 5;
 	}
 	
 	void canjearDestreza(int puntos) {
@@ -96,7 +96,7 @@ class Personaje {
 	
 	int calcularConstitucion() {
 		
-		return constitucion.calcular();
+		return (verConstitucion()/2) - 5;
 	}
 	
 	void canjearConstitucion(int puntos) {
@@ -131,7 +131,7 @@ class Personaje {
 	
 	int calcularInteligencia() {
 		
-		return inteligencia.calcular();
+		return (verInteligencia()/2) - 5;
 	}
 	
 	void canjearInteligencia(int puntos) {
@@ -166,7 +166,7 @@ class Personaje {
 	
 	int calcularSabiduria() {
 		
-		return sabiduria.calcular();
+		return (verSabiduria()/2) - 5;
 	}
 	
 	void canjearSabiduria(int puntos) {
@@ -201,7 +201,7 @@ class Personaje {
 	
 	int calcularCarisma() {
 		 
-		return carisma.calcular();
+		return (verCarisma()/2) - 5;
 	}
 	
 	void canjearCarisma(int puntos) {

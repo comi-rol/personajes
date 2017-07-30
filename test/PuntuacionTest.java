@@ -31,14 +31,4 @@ public class PuntuacionTest {
 		
 		Assert.assertEquals(17,unaPuntuacion.verValor());
 	}
-	
-	@Test
-	public void  calcularModificadorPara17Es3() {
-		
-		Puntuacion unaPuntuacion = new Puntuacion();
-		
-		unaPuntuacion.canjear(13);
-		
-		Assert.assertEquals(3,unaPuntuacion.calcular());
-	}
 }

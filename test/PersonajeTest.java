@@ -115,4 +115,20 @@ public class PersonajeTest {
 		
 		Assert.assertEquals(12, sheldom.verFuerza());
 	}
+	
+	@Test
+	public void calcularModificadoresConsiderandoLaRaza() {
+		
+		Personaje gary = new Personaje();
+		
+		gary.canjearConstitucion(7);
+		gary.canjearInteligencia(5);
+		gary.canjearFuerza(3);
+
+		gary.definirRaza(catalogo.SEMIORCO);
+		gary.recibirAdicionalesEnConstitucion();
+		
+		Assert.assertEquals(3, gary.calcularConstitucion());
+		
+	}
 }

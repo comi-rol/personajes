@@ -49,13 +49,6 @@ class Puntuacion {
 		return puntosCanjeados;
 	}
 	
-	int calcular() {
-		
-		int modificador = (valor/2) - 5;
-
-		return modificador;
-	}
-	
 	int verValor() {
 		
 		return valor;
