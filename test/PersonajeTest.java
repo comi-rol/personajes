@@ -76,8 +76,43 @@ public class PersonajeTest {
 		
 		stan.definirRaza(catalogo.HUMANO);
 		
-		stan.canjearFuerza(2);
+		stan.recibirAdicionalesEnFuerza();
 		
 		Assert.assertEquals(12, stan.verFuerza());
+	}
+	
+	@Test
+	public void alCambiarDeRazaConPtosAdicionalesEstosNoSeConservan() {
+		
+		Personaje stan = new Personaje();
+		
+		stan.canjearDestreza(5);
+		stan.canjearInteligencia(5);
+		stan.canjearCarisma(5);
+		
+		stan.definirRaza(catalogo.HUMANO);
+		
+		stan.recibirAdicionalesEnFuerza();
+		
+		stan.definirRaza(catalogo.ENANO);
+		
+		Assert.assertEquals(10, stan.verFuerza());
+	}
+	
+	@Test
+	public void laRecepcionDeAdicionalesSeConservaLuegoDeCambiarEntreRazas() {
+		
+		Personaje sheldom = new Personaje();
+		
+		sheldom.canjearDestreza(5);
+		sheldom.canjearInteligencia(5);
+		sheldom.canjearCarisma(5);
+		
+		sheldom.definirRaza(catalogo.HUMANO);
+		sheldom.recibirAdicionalesEnFuerza();
+		sheldom.definirRaza(catalogo.ENANO);
+		sheldom.definirRaza(catalogo.HUMANO);
+		
+		Assert.assertEquals(12, sheldom.verFuerza());
 	}
 }

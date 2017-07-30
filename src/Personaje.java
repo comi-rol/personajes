@@ -15,6 +15,8 @@ class Personaje {
 	
 	private Puntuacion carisma = new Puntuacion();
 	
+	private Puntuacion caracteristicaConAdicionales = null;
+	
 	private Raza raza;
 	
 	int calcularDisponibles() {
@@ -42,9 +44,19 @@ class Personaje {
 		if (raza != null) {
 			
 			fuerzaTotal = fuerzaTotal + raza.verFuerza();
+			
+			if (caracteristicaConAdicionales == fuerza) {
+				
+				fuerzaTotal = fuerzaTotal + raza.verAdicional();
+			}
 		}
 		
 		return fuerzaTotal;
+	}
+	
+	void recibirAdicionalesEnFuerza() {
+		
+		caracteristicaConAdicionales = fuerza;
 	}
 	
 	int calcularDestreza() {
@@ -67,9 +79,19 @@ class Personaje {
 		if (raza != null) {
 			
 			destrezaTotal = destrezaTotal + raza.verDestreza();
+		
+			if(caracteristicaConAdicionales == destreza) {
+				
+				destrezaTotal = destrezaTotal + raza.verAdicional();
+			}
 		}
 		
 		return destrezaTotal;
+	}
+	
+	void recibirAdicionalesEnDestreza() {
+		
+		caracteristicaConAdicionales = destreza;
 	}
 	
 	int calcularConstitucion() {
@@ -92,9 +114,19 @@ class Personaje {
 		if (raza != null) {
 			
 			constitucionTotal= constitucionTotal + raza.verConstitucion();
+			
+			if (caracteristicaConAdicionales == constitucion) {
+				
+				constitucionTotal = constitucionTotal + raza.verAdicional();
+			}
 		}
 		
 		return constitucionTotal;
+	}
+	
+	void recibirAdicionalesEnConstitucion() {
+		
+		caracteristicaConAdicionales = constitucion;
 	}
 	
 	int calcularInteligencia() {
@@ -117,9 +149,19 @@ class Personaje {
 		if (raza != null) {
 			
 			inteligenciaTotal = inteligenciaTotal + raza.verInteligencia();
+			
+			if (caracteristicaConAdicionales == inteligencia) {
+				
+				inteligenciaTotal = inteligenciaTotal + raza.verAdicional(); 
+			}
 		}
 		
 		return inteligenciaTotal;
+	}
+	
+	void recibirAdicionalesEnInteligencia() {
+		
+		caracteristicaConAdicionales = inteligencia;
 	}
 	
 	int calcularSabiduria() {
@@ -142,9 +184,19 @@ class Personaje {
 		if (raza != null) {
 			
 			sabiduriaTotal = sabiduriaTotal + raza.verSabiduria();
+			
+			if (caracteristicaConAdicionales == sabiduria) {
+				
+				sabiduriaTotal = sabiduriaTotal + raza.verAdicional();
+			}
 		}
 		
 		return sabiduriaTotal;
+	}
+	
+	void recibirAdicionalesEnSabiduria() {
+		
+		caracteristicaConAdicionales = sabiduria;
 	}
 	
 	int calcularCarisma() {
@@ -167,9 +219,19 @@ class Personaje {
 		if (raza != null) {
 			
 			carismaTotal = carismaTotal + raza.verCarisma();
+			
+			if (caracteristicaConAdicionales == carisma) {
+				
+				carismaTotal = carismaTotal + raza.verAdicional();
+			}
 		}
 		
 		return carismaTotal;
+	}
+	
+	void recibirAdicionalesEnCarisma() {
+		
+		caracteristicaConAdicionales = carisma;
 	}
 	
 	void definirRaza(Raza razaElegida) {
@@ -177,8 +239,6 @@ class Personaje {
 		if (puntosDisponibles == 0) {
 			
 			raza = razaElegida;
-			
-			puntosDisponibles = raza.verAdicional();
 		}
 	}
 	
